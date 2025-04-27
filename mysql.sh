@@ -25,5 +25,10 @@ validate $? "installing mysql"
 systemctl enable mysqld
 validate $? "enable mysql"
 
+systemctl start mysqld
+validate $? "start mysql"
+
+mysql_secure_installation --set-root-pass ExpenseApp@1
+validate $? "setting root password"
 
 
