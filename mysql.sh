@@ -12,7 +12,7 @@ validate()
     fi
 }
 
-if [ $? -ne 0 ]
+if [ $userid -ne 0 ]
 then 
     echo "you must need root access to execute this script"
     exit 1
