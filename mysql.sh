@@ -28,7 +28,15 @@ validate $? "enable mysql"
 systemctl start mysqld
 validate $? "start mysql"
 
-mysql_secure_installation --set-root-pass ExpenseApp@1
-validate $? "setting root password"
+mysql -h 34.207.158.75 -u root -pExpenseApp@1 -e 'show databases;'
+
+if [ $? -ne 0 ]
+then 
+    echo "root pwd not setup" 
+    mysql_secure_installation --set-root-pass ExpenseApp@1
+    validate $? "root pwd setup"
+else
+    echo "root pwd already setup"
+fi
 
 
