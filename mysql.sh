@@ -22,5 +22,8 @@ fi
 dnf install mysql-server -y
 validate $? "installing mysql"
 
+systemstl enable mysqld
+validate $? "enable mysql"
+
 
 
