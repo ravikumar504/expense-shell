@@ -41,7 +41,7 @@ cd /app
 unzip /tmp/backend.zip
 validate $? "unzipping the code"
 
-npm install
+npm install -g npm@11.3.0
 validate $? "installing dependencies"
 
 cp /home/ec2-user/expense-shell/backend.service /etc/systemd/system/backend.service
@@ -49,7 +49,7 @@ cp /home/ec2-user/expense-shell/backend.service /etc/systemd/system/backend.serv
 dnf install mysql -y
 validate $? "installing mysql"
 
-mysql -h <MYSQL-SERVER-IPADDRESS> -uroot -pExpenseApp@1 < /app/schema/backend.sql
+mysql -h 34.207.158.75 -uroot -pExpenseApp@1 < /app/schema/backend.sql
 validate $? "schema loading"
 
 systemctl daemon-reload
