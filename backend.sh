@@ -28,12 +28,14 @@ dnf install nodejs -y
 validate $? "installing nodejs"
 
 id expense
+
 if [ $? -ne 0 ]
 then
     useradd expense
     validate $? "adding user expense"
 else
     echo "user already added"
+fi
 
 
 mkdir -p /app
