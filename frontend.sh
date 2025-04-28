@@ -25,9 +25,6 @@ validate $? "installing nginx"
 systemctl enable nginx
 validate $? "enable nginx"
 
-systemctl start nginx
-validate $? "start nginx"
-
 rm -rf /usr/share/nginx/html/*
 validate $? 'removing code'
 
