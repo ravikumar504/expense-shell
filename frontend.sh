@@ -40,6 +40,7 @@ unzip /tmp/frontend.zip
 validate $? "unzip code"
 
 cp /home/ec2-user/expense-shell/backend.service /etc/nginx/default.d/expense.conf
+validate $? "copy conf file"
 
 systemctl restart nginx
 validate $? "restart nginx"
