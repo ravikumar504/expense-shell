@@ -47,7 +47,7 @@ validate $? "downloading code"
 
 cd /app
 
-rm -rf /tmp/*
+rm -rf /app/*
 validate $? "removing files"
 
 unzip /tmp/backend.zip
