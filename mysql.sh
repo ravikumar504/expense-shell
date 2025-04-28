@@ -28,7 +28,7 @@ validate $? "enable mysql"
 systemctl start mysqld
 validate $? "start mysql"
 
-mysql -h 34.207.158.75 -u root -pExpenseApp@1 -e 'show databases;'
+mysql -h 34.207.158.75 -u root -pExpenseApp@1 -e 'show databases;' 
 
 if [ $? -ne 0 ]
 then 
