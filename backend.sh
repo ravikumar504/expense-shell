@@ -53,7 +53,7 @@ validate $? "removing files"
 unzip /tmp/backend.zip
 validate $? "unzipping the code"
 
-npm install -g npm@11.3.0
+npm install 
 validate $? "installing dependencies"
 
 cp /home/ec2-user/expense-shell/backend.service /etc/systemd/system/backend.service
