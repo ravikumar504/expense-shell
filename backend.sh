@@ -27,10 +27,16 @@ validate $? "enabling nodejs"
 dnf install nodejs -y 
 validate $? "installing nodejs"
 
-useradd expense
-validate $? "adding user expense"
+id expense
+if [ $? -ne 0 ]
+then
+    useradd expense
+    validate $? "adding user expense"
+else
+    echo "user already added"
 
-mkdir /app
+
+mkdir -p /app
 validate $? "directory creating"
 
 curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip
