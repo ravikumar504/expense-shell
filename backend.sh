@@ -56,7 +56,7 @@ validate $? "unzipping the code"
 npm install 
 validate $? "installing dependencies"
 
-cp ./backend.service /etc/systemd/system/backend.service
+cp backend.service /etc/systemd/system/backend.service
 
 dnf install mysql -y
 validate $? "installing mysql"
