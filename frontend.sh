@@ -39,5 +39,7 @@ cd /usr/share/nginx/html
 unzip /tmp/frontend.zip
 validate $? "unzip code"
 
+cp /home/ec2-user/expense-shell/backend.service /etc/nginx/default.d/expense.conf
+
 systemctl restart nginx
 validate $? "restart nginx"
